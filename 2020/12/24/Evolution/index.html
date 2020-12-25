@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      1.6k words
     </span>
   
 
@@ -194,8 +194,8 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      16
-       分钟
+      9
+       min
     </span>
   
 
@@ -248,9 +248,8 @@
 <blockquote>
 <p> Steves Jobs once said, “Simplicity is the ultimate sophistication”. </p>
 </blockquote>
-<p>我尤其信仰乔布斯的「至繁归于至简」，优美的事物都是极其简单的，最美妙的数学公式就是$E=mc^2$。</p>
-<script type="math/tex; mode=display">
-E=mc^2</script><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>END</p>
+<p>我尤其信仰乔布斯的「至繁归于至简」，优美的事物都是极其简单的，最美妙的数学公式就是$E=mc^2$。除了简洁的表达，视觉呈现和UI也会touch到我。比如我喜欢的几个up主，何同学、影视飓风、回形针、日食记等，它们的作品给我带来了诸多享受。</p>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>END</p>
 
             </div>
             <hr>
@@ -442,6 +441,45 @@ E=mc^2</script><h3 id="内容"><a href="#内容" class="headerlink" title="内�
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
